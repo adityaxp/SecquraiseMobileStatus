@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "933035276978",
+    "project_id": "secquraisemobilestatus",
+    "storage_bucket": "secquraisemobilestatus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933035276978:android:e7521d2b71b12d360667ab",
+        "android_client_info": {
+          "package_name": "com.aditya.secquraisemobilestatus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933035276978-12m1nrie2318qo9kpgl1ntbg3iomt8ud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcbxQcnJPXk0p9p1QZkIfNaqPnOJWKUf0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933035276978-12m1nrie2318qo9kpgl1ntbg3iomt8ud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

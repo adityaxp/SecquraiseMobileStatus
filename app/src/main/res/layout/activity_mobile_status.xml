@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MobileStatusActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolBarLayout">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/mobileStatusToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@drawable/custom_toolbar"
+            android:elevation="5dp"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:popupTheme="@style/MenuStyle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolBarTextView"
+                android:textSize="20sp"
+                android:text="SecqurAIse Mobile Status"
+                android:layout_marginLeft="10dp"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Device Name: "
+        android:textSize="18sp"
+        android:id="@+id/deviceNameTextView"
+        android:paddingLeft="10dp"
+        android:layout_below="@id/toolBarLayout"
+        android:background="#D3D3D3"
+        android:textColor="#000"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/deviceNameTextView">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:id="@+id/IMEICardView"
+        android:layout_marginBottom="3dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/imei"
+                android:id="@+id/imeiImage"
+                android:padding="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IMEI number:"
+                android:textSize="19sp"
+                android:id="@+id/imeiTextView"
+                android:layout_toEndOf="@id/imeiImage"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:id="@+id/internetConnectivityCardView"
+            android:layout_marginBottom="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            android:layout_below="@id/IMEICardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/connectivity"
+                    android:id="@+id/connectionImage"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Connection status:"
+                    android:id="@+id/connectionStatusTextView"
+                    android:textSize="19sp"
+                    android:layout_toEndOf="@id/connectionImage"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:id="@+id/chargingStatusCardView"
+            android:layout_marginBottom="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            android:layout_below="@id/internetConnectivityCardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_battery_charge"
+                    android:id="@+id/chargingStatusImageView"
+                    android:padding="12dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Charging status:"
+                    android:textSize="19sp"
+                    android:id="@+id/chargingStatusTextView"
+                    android:layout_toEndOf="@id/chargingStatusImageView"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:id="@+id/batteryPercentageCardView"
+            android:layout_marginBottom="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            android:layout_below="@id/chargingStatusCardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/below50battery"
+                    android:id="@+id/batteryPercentageImageView"
+                    android:padding="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Battery percentage:"
+                    android:id="@+id/batteryPercentageTextView"
+                    android:textSize="19sp"
+                    android:layout_toEndOf="@id/batteryPercentageImageView"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:id="@+id/locationDataCardView"
+            android:layout_marginBottom="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            android:layout_below="@id/batteryPercentageCardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_location"
+                    android:id="@+id/locationDataImageView"
+                    android:padding="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location:"
+                    android:textSize="19sp"
+                    android:id="@+id/locationTextView"
+                    android:layout_toEndOf="@id/locationDataImageView"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:id="@+id/cameraCardView"
+            android:layout_marginBottom="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            android:layout_below="@id/locationDataCardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_camera"
+                    android:id="@+id/cameraImageView"
+                    android:padding="15.5dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Camera:"
+                    android:textSize="19sp"
+                    android:layout_toEndOf="@id/cameraImageView"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/cameraTextView"
+                    android:padding="10dp"
+                    />
+
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="140dp"
+                    android:layout_below="@+id/cameraTextView"
+                    android:layout_toEndOf="@id/cameraImageView"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/capturedPhotoImageView"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/imagenotfound"
+                    android:scaleType="fitXY"
+                    />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/capturedPhotoImageView"
+                    android:layout_alignStart="@+id/capturedPhotoImageView"
+                    android:text="Capture Photo"
+                    android:id="@+id/captureImageButton"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFF"
+                    android:background="@drawable/custom_button"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                     />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:id="@+id/timeStampCardView"
+            android:layout_marginBottom="3dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            android:layout_below="@id/cameraCardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_time_stamp"
+                    android:id="@+id/timeStampImageView"
+                    android:padding="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Time Stamp:"
+                    android:textSize="19sp"
+                    android:id="@+id/timeStampTextView"
+                    android:layout_toEndOf="@id/timeStampImageView"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeStampCardView"
+            android:layout_marginTop="20dp"
+            android:text="Upload Data to Cloud"
+            android:id="@+id/uploadDataButton"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:textSize="17dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/custom_button"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/ic_cloud"
+            android:padding="10dp"
+            />
+
+    </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>
