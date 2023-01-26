@@ -71,6 +71,7 @@ public class MobileStatusActivity extends AppCompatActivity {
     private Button captureImageButton, uploadDataButton;
     private Handler updateMobileStatusHandler;
     private String imageURL, locationLatitude, locationLongitude, timeStamp, imei;
+    private  AutoUploadDataWhenConnectionEstablishedRunnableThread autoUploadDataWhenConnectionEstablishedRunnableThread;
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -138,7 +139,7 @@ public class MobileStatusActivity extends AppCompatActivity {
                             .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    AutoUploadDataWhenConnectionEstablishedRunnableThread autoUploadDataWhenConnectionEstablishedRunnableThread = new AutoUploadDataWhenConnectionEstablishedRunnableThread();
+                                    autoUploadDataWhenConnectionEstablishedRunnableThread = new AutoUploadDataWhenConnectionEstablishedRunnableThread();
                                     new Thread(autoUploadDataWhenConnectionEstablishedRunnableThread).start();
                                 }
                             }).setNegativeButton("Cancel upload", new DialogInterface.OnClickListener() {
@@ -421,6 +422,8 @@ public class MobileStatusActivity extends AppCompatActivity {
                     public void run() {
                         uploadData();
                         uploadDataButton.setEnabled(true);
+                        Future stopThread = executorService.submit(autoUploadDataWhenConnectionEstablishedRunnableThread);
+                        stopThread.cancel(true);
                     }
                 });
         }
